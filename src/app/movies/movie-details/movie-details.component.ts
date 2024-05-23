@@ -15,29 +15,13 @@ import { CommonModule } from '@angular/common';
 export class MovieDetailsComponent implements OnInit {
   movieId!: string | null;
   movieService = inject(MovieService);
-  constructor(private route: ActivatedRoute) {}
+  route = inject(ActivatedRoute);
   movie$!: Observable<Movie>;
+
   ngOnInit(): void {
     this.movieId = this.route.snapshot.paramMap.get('id');
     if (this.movieId !== null) {
       this.movie$ = this.movieService.getMovieById(this.movieId!);
-    }
-  }
-
-  getBoxOfficeDisplay(value?: string): string {
-    try {
-      if (value !== undefined) {
-        const numValue = parseFloat(value);
-        if (numValue < 10) {
-          return `${value} billion`;
-        } else {
-          return `${value} million`;
-        }
-      } else {
-        return 'not found!';
-      }
-    } catch {
-      return 'not found!';
     }
   }
 }
