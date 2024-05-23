@@ -1,0 +1,41 @@
+.movie-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details-button {
+  height: 100%;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.filter-container {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.filters input {
+  padding: 5px;
+  border-radius: 5px;
+}

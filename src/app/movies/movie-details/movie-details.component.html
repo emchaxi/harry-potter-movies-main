@@ -1,0 +1,35 @@
+<ng-container *ngIf="movie$ | async as movie">
+  <div>
+    <button [routerLink]="['/movies']">back</button>
+    <h1>{{ movie.title }}</h1>
+    <div class="summary-div">
+      <img [src]="movie.poster" />
+      <p>{{ movie.summary }}</p>
+    </div>
+    <div class="details-container">
+      <h2>Details</h2>
+      <table class="details-table">
+        <tr>
+          <th>Box office</th>
+          <td>{{ getBoxOfficeDisplay(movie.box_office) }}</td>
+        </tr>
+        <tr>
+          <th>Budget</th>
+          <td>{{ getBoxOfficeDisplay(movie.budget) }}</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>{{ movie.duration }}</td>
+        </tr>
+        <tr>
+          <th>Producers</th>
+          <td>{{ movie.producers }}</td>
+        </tr>
+        <tr>
+          <th>Cinematographers</th>
+          <td>{{ movie.cinematographers }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</ng-container>

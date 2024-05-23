@@ -1,0 +1,46 @@
+<ng-container *ngIf="filteredMovies$ | async as movies">
+  <div class="filter-container">
+    <h3>Filters</h3>
+    <div class="filters">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Enter title"
+        [formControl]="titleControl"
+      />
+      <label for="releaseYear">Release year</label>
+      <input
+        type="text"
+        id="releaseYear"
+        name="releaseYear"
+        placeholder="Enter year"
+        [formControl]="releaseYearControl"
+      />
+    </div>
+  </div>
+
+  <h2>Movie List</h2>
+  <ul>
+    <li *ngFor="let movie of movies">
+      <div class="movie-container">
+        <div class="movie-details">
+          <h3>{{ movie.title }}</h3>
+          <div class="details">
+            <p>Release date: {{ movie.release_date }}</p>
+            <p>Budget: ${{ movie.budget }} million</p>
+            <p>Duration: {{ movie.duration }}</p>
+          </div>
+        </div>
+        <button
+          [id]="movie.id"
+          class="details-button"
+          [routerLink]="['/movie/', movie.id]"
+        >
+          Details
+        </button>
+      </div>
+    </li>
+  </ul>
+</ng-container>
