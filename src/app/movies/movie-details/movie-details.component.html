@@ -1,6 +1,6 @@
 <ng-container *ngIf="movie$ | async as movie">
   <div>
-    <button [routerLink]="['']">back</button>
+    <button [routerLink]="['/']">Back</button>
     <h1>{{ movie.title }}</h1>
     <div class="summary-div">
       <img [src]="movie.poster" />
