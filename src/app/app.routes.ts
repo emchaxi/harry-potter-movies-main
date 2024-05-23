@@ -5,11 +5,11 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 
 export const routes: Routes = [
   {
-    path: 'movies',
+    path: '',
     component: MovieListComponent,
   },
   {
-    path: 'movie/:id',
+    path: ':id',
     component: MovieDetailsComponent,
   },
 ];
